@@ -12,7 +12,7 @@
             <strong>Information</strong><br>
             <div class="table-responsive">
             <table class="table table-user-information">
-            <form action="{{ route('etudiant.store') }}" method="POST">
+            <form action="{{ route('etudiant.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                 <tbody>
                     <tr>        
@@ -83,6 +83,13 @@
                                 {{ $errors->first('ville_id')}}
                             </div>
                             @endif
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-primary">
+                        <label for="avatar">Avatar:</label>
+                        <input class="form-control" type="file" id="avatar" name="avatar">
+
                         </td>
                     </tr>                                   
                 </tbody>

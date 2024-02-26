@@ -16,7 +16,8 @@ class Etudiant extends Model
         'téléphone',
         'email',
         'date_de_naissance',
-        'ville_id'
+        'ville_id',
+        'avatar'
     ];
 
     public function ville(){

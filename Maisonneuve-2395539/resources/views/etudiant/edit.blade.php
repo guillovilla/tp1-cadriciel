@@ -76,7 +76,7 @@
                         <label for="ville_id">Ville:</label>
                             <select class="form-control" id="ville_id" name="ville_id">
                             @foreach($villes as $ville)
-                                <option value="{{ $ville->nom }}" @if($etudiant->ville->nom == $ville->nom) selected @endif>
+                                <option value="{{ $ville->id }}" @if($etudiant->ville->nom == $ville->nom) selected @endif>
                                     {{ $ville->nom }}
                                 </option>
                             @endforeach

@@ -6,7 +6,8 @@
     
     <div class="row">
         <div class="col-md-4">
-            <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip" src="{{ asset('img/logo.jpg') }}" data-original-title="Usuario"> 
+        <img src="{{ asset('avatar/' . $etudiant->avatar) }}" alt="Cover" class="card-img-top">
+ 
         </div>
         <div class="col-md-6">
             <strong>Information</strong><br>

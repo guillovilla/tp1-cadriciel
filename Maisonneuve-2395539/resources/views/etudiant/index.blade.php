@@ -10,7 +10,7 @@
                         <div class="card">
                             <img src="https://www.bootdey.com/image/340x120/87CEFA/000000" alt="Cover" class="card-img-top">
                             <div class="card-body text-center">
-                            <img src="{{ asset('img/logo_maisonneuve.png') }}" style="width:100px;margin-top:-65px" alt="User" class="img-fluid img-thumbnail rounded-circle border-0 mb-3">
+                            <img src="{{ asset('avatar/' . $etudiant->avatar) }}" style="width:100px;margin-top:-65px" alt="User" class="img-fluid img-thumbnail rounded-circle border-0 mb-3">
                             <h5 class="card-title">{{ $etudiant->nom }}</h5>
                             <p class="text-muted font-size-sm">{{ $etudiant->email }}</p>
                             </div>

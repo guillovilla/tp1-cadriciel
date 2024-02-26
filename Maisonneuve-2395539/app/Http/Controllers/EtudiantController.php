@@ -49,11 +49,18 @@ class EtudiantController extends Controller
             'téléphone' => $request->téléphone,
             'email' => $request->email,
             'date_de_naissance' => $request->date_de_naissance,
-            'ville_id' => $request->input('ville_id')
+            'ville_id' => $request->input('ville_id'),
         ]);
-
-        return  redirect()->route('etudiant.show', $etudiant->id)->with('success', 'Étudiant créé!');
-        
+    
+        if ($request->hasFile('avatar')) {
+            $avatar = $request->file('avatar');
+            $avatarName = time() . '.' . $avatar->getClientOriginalExtension();
+            $avatar->move(public_path('avatar'), $avatarName);
+            // Actualiza el campo 'avatar' en la tabla 'etudiants' con el nombre del archivo
+            $etudiant->update(['avatar' => $avatarName]);
+        }
+    
+        return redirect()->route('etudiant.show', $etudiant->id)->with('success', 'Étudiant créé!');
     }
 
     /**
@@ -95,6 +102,7 @@ class EtudiantController extends Controller
             'email' => $request->email,
             'date_de_naissance' => $request->date_de_naissance,
             'ville_id' => $request->input('ville_id')
+
         ]);
 
         return redirect()->route('etudiant.show', $etudiant->id)->with('success', 'Étudiant updated successfully!');
