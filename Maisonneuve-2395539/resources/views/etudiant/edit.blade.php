@@ -6,7 +6,7 @@
     
     <div class="row">
         <div class="col-md-4">
-            <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip" src="https://bootdey.com/img/Content/avatar/avatar7.png" data-original-title="Usuario"> 
+        <img src="{{ asset('avatar/' . $etudiant->avatar) }}" alt="Cover" class="img-fluid img-thumbnail rounded-circle border-0 mb-3">
         </div>
         <div class="col-md-6">
             <strong>Information</strong><br>

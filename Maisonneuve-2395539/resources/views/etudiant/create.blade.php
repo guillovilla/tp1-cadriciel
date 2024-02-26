@@ -6,7 +6,7 @@
     
     <div class="row">
         <div class="col-md-4">
-            <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip" src="https://bootdey.com/img/Content/avatar/avatar7.png" data-original-title="Usuario"> 
+            <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip" src="{{ asset('img/logo_maisonneuve.png') }}" data-original-title="Usuario"> 
         </div>
         <div class="col-md-6">
             <strong>Information</strong><br>
@@ -87,7 +87,7 @@
                     </tr>
                     <tr>
                         <td class="text-primary">
-                        <label for="avatar">Avatar:</label>
+                        <label for="avatar">Avatar (jpg):</label>
                         <input class="form-control" type="file" id="avatar" name="avatar">
 
                         </td>

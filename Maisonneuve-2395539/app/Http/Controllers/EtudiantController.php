@@ -37,7 +37,7 @@ class EtudiantController extends Controller
             'nom' => 'required|min:2|max:191|string',
             'adresse' => 'required|string',
             'téléphone' => 'required|numeric',
-            'email' => 'required|email', 
+            'email' => 'required|email|unique:etudiants', 
             'date_de_naissance' => 'required|date',
             'ville_id' => 'required|exists:villes,id'
         
