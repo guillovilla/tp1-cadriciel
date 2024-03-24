@@ -11,10 +11,11 @@ class Etudiant extends Model
    
 
     protected $fillable = [
-        'nom',
+        // 'nom',
+        'id',
         'adresse',
         'téléphone',
-        'email',
+        // 'email',
         'date_de_naissance',
         'ville_id',
         'avatar'
@@ -24,5 +25,15 @@ class Etudiant extends Model
 
         return $this->belongsTo(Ville::class);
 
+    }
+    
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id');
+    }
+    
+    public function forum()
+    {
+        return $this->hasOne(Forum::class, 'user_id');
     }
 }

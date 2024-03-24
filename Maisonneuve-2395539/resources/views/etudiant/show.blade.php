@@ -1,12 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Etudiants List')
 @section('content')
-<div class="container bootstrap snippets bootdey">
-<div class="panel-body inf-content">
-    
     <div class="row">
         <div class="col-md-4">
-        <img src="{{ asset('avatar/' . $etudiant->avatar) }}" alt="Cover" class="img-fluid img-thumbnail rounded-circle border-0 mb-3">
+        <img src="{{ asset('avatar/' . $etudiant->avatar) }}" alt="Cover" class="img-fluid img-thumbnail rounded-circle border-5 mb-3">
  
         </div>
         <div class="col-md-6">
@@ -18,18 +15,18 @@
                         <td>
                             <strong>
                                 <span class="glyphicon glyphicon-asterisk text-primary"></span>
-                                Name                                                
+                                @lang('Nom')                                               
                             </strong>
                         </td>
                         <td class="text-primary">
-                        {{ $etudiant->nom }}     
+                        {{ $etudiant->user?->nom }}    
                         </td>
                     </tr>
                     <tr>    
                         <td>
                             <strong>
                                 <span class="glyphicon glyphicon-user  text-primary"></span>    
-                                Adresse                                                
+                                @lang('Adresse')                                                
                             </strong>
                         </td>
                         <td class="text-primary">
@@ -40,7 +37,7 @@
                         <td>
                             <strong>
                                 <span class="glyphicon glyphicon-cloud text-primary"></span>  
-                                Téléphone                                                
+                                @lang('Téléphone')                                                
                             </strong>
                         </td>
                         <td class="text-primary">
@@ -52,11 +49,11 @@
                         <td>
                             <strong>
                                 <span class="glyphicon glyphicon-bookmark text-primary"></span> 
-                                Email                                                
+                                @lang('Email')                                                
                             </strong>
                         </td>
                         <td class="text-primary">
-                        {{ $etudiant->email }} 
+                        {{ $etudiant->user->email }}
                         </td>
                     </tr>
 
@@ -65,7 +62,7 @@
                         <td>
                             <strong>
                                 <span class="glyphicon glyphicon-eye-open text-primary"></span> 
-                                Date de naissance                                                
+                                @lang('Date de naissance')                                                
                             </strong>
                         </td>
                         <td class="text-primary">
@@ -76,7 +73,7 @@
                         <td>
                             <strong>
                                 <span class="glyphicon glyphicon-envelope text-primary"></span> 
-                                Ville                                                
+                                @lang('Ville')                                                
                             </strong>
                         </td>
                         <td class="text-primary">
@@ -87,7 +84,7 @@
                         <td>
                             <strong>
                                 <span class="glyphicon glyphicon-calendar text-primary"></span>
-                                Created at                                                
+                                @lang('Créé le')                                                
                             </strong>
                         </td>
                         <td class="text-primary">
@@ -98,7 +95,7 @@
                         <td>
                             <strong>
                                 <span class="glyphicon glyphicon-calendar text-primary"></span>
-                                Updated at                                                
+                                @lang('Mis à jour le')                                                
                             </strong>
                         </td>
                         <td class="text-primary">
@@ -109,12 +106,12 @@
             </table>
             <div class="card-footer">
                 <div class="d-flex justify-content-between ">
-                <a href="{{route('etudiant.edit', $etudiant->id)}}" class="btn btn-sm btn-outline-success">Modifier</a>
+                <a href="{{route('etudiant.edit', $etudiant->id)}}" class="btn btn-sm btn-outline-success">@lang('Modifier') </a>
                 
                 <form  method="post">
                     @csrf
                     @method('delete')
-                    <button type="submit" class="btn btn-sm btn-outline-danger">Supprimer</button>
+                    <button type="submit" class="btn btn-sm btn-outline-danger">@lang('Supprimer')</button>
                 </form>
             </div>
             </div>

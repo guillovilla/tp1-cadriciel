@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Etudiant;
+use App\Models\User;
 use App\Models\Ville;
 use Illuminate\Http\Request;
 
@@ -37,26 +38,35 @@ class EtudiantController extends Controller
             'nom' => 'required|min:2|max:191|string',
             'adresse' => 'required|string',
             'téléphone' => 'required|numeric',
-            'email' => 'required|email|unique:etudiants', 
-            'date_de_naissance' => 'required|date',
-            'ville_id' => 'required|exists:villes,id'
+            'email' => 'required|email|unique:users', 
+            'date_de_naissance' => 'required|date_format:Y-m-d|before:today',
+            'ville_id' => 'required|exists:villes,id',
+            'password' => 'min:6|max:20',
+            'password_confirmation' => 'required|same:password'
         
         ]);
 
-        $etudiant = Etudiant::create([
+        $user = User::create([
             'nom' => $request->nom,
+            'email' => $request->email,
+            'password' => bcrypt($request->password)
+        ]);
+
+       
+        $etudiant = Etudiant::create([
+            // 'nom' => $request->nom,
             'adresse' => $request->adresse,
             'téléphone' => $request->téléphone,
-            'email' => $request->email,
+            // 'email' => $request->email,
             'date_de_naissance' => $request->date_de_naissance,
             'ville_id' => $request->input('ville_id'),
-        ]);
+    ]);
+
     
         if ($request->hasFile('avatar')) {
             $avatar = $request->file('avatar');
             $avatarName = time() . '.' . $avatar->getClientOriginalExtension();
             $avatar->move(public_path('avatar'), $avatarName);
-            // Actualiza el campo 'avatar' en la tabla 'etudiants' con el nombre del archivo
             $etudiant->update(['avatar' => $avatarName]);
         }
     
@@ -68,6 +78,7 @@ class EtudiantController extends Controller
      */
     public function show(Etudiant $etudiant)
     {
+        $etudiant->load('user');
         return view('etudiant.show', ["etudiant" => $etudiant]);
     }
 

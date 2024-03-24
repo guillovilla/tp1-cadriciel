@@ -1,0 +1,19 @@
+{
+    "Nom": "Name",
+    "Adresse": "Address",
+    "Téléphone": "Phone",
+    "Email": "Email",
+    "Date de naissance": "Date of Birth",
+    "Ville": "City",
+    "Créé le": "Created at",
+    "Mis à jour le": "Updated at",
+    "Mot de passe": "Password",
+    "Connexion": "Login",
+    "Confirmation du mot de passe": "Password Confirmation",
+    "Déconnexion": "Logout",
+    "Modifier": "Edit",
+    "Supprimer": "Delete",
+    "Enregistrer": "Save",
+    "Langue": "language"
+
+}
