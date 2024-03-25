@@ -42,7 +42,8 @@ class EtudiantController extends Controller
             'date_de_naissance' => 'required|date_format:Y-m-d|before:today',
             'ville_id' => 'required|exists:villes,id',
             'password' => 'min:6|max:20',
-            'password_confirmation' => 'required|same:password'
+            'password_confirmation' => 'required|same:password',
+            'avatar' => 'nullable|file|mimes:jpg,jpeg,png|max:2048',
         
         ]);
 

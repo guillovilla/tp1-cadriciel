@@ -6,5 +6,8 @@ return [
     "text_ajouter" => "Add a student",
     "titre_en_français" => "Title in English",
     "rédiger_un_article" => "Write an article",
+    "répertoire_de_documents" => "Documents directory",
+    "télécharger_un_fichier" => "Upload a file"
+
 
 ];

@@ -11,7 +11,9 @@
     <header>
     <nav class="navbar navbar-expand-md navbar-dark bg-info" aria-label="Fourth navbar example">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{{route('etudiant.index')}}">College de Maisonneuve</a>
+      <a class="navbar-brand" href="{{route('etudiant.index')}}">
+      <img alt="" style="width: 200px;px;" title="" class="img-circle img-thumbnail isTooltip" src="{{ asset('img/logo.jpg') }}" data-original-title="Usuario">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -26,6 +28,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="{{route('forum.index')}}">Forum</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{{route('document.index')}}">@lang('lang.répertoire_de_documents')</a>
           </li>
           
           <li class="nav-item dropdown">

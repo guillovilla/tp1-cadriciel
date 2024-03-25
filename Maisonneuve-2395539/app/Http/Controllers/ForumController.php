@@ -45,7 +45,8 @@ class ForumController extends Controller
         'fr' => $request->titre_fr,
     ];
     if($request->titre_en != null) { 
-        $titre = $titre + ['en' => $request->titre_en];};
+        $titre = $titre + ['en' => $request->titre_en];
+    };
 
     $texte = [
         'fr' => $request->texte_fr,
@@ -54,11 +55,11 @@ class ForumController extends Controller
         $texte = $texte + ['en' => $request->texte_en];
     };
 
-    
+
     Forum::create([
         'titre' => $titre,
         'texte' => $texte,
-        'user_id' =>  Auth::user()->id,
+        'user_id' => Auth::user()->id,
 
     ]);
     return back()->withSuccess('Post created successfully!');

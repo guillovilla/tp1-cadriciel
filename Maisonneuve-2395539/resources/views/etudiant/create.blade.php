@@ -112,7 +112,11 @@
                         <td class="text-primary">
                         <label for="avatar">Avatar (jpg):</label>
                         <input class="form-control" type="file" id="avatar" name="avatar">
-
+                        @if($errors->has('avatar'))
+                            <div class="text-danger mt-2">
+                                {{ $errors->first('avatar')}}
+                            </div>
+                            @endif
                         </td>
                     </tr>
                 </tbody>
